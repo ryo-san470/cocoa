@@ -1,0 +1,11 @@
+machine:
+  python:
+    version: 3.6.0
+
+dependencies:
+  cache_directories:
+    - "~/.cache/pip"
+
+test:
+  override:
+    - python setup.py test

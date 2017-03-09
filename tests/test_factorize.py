@@ -22,3 +22,28 @@ class TestFactorizeTestCase(unittest.TestCase):
         solve_q = self.n // solve_p
 
         self.assertEqual(self.n, solve_p * solve_q)
+
+    def test_fermat_success(self):
+        r = self._import_public_key("fermat.pem")
+        f = Factorize(r.n)
+        solve_p = f.fermat()
+        solve_q = r.n // solve_p
+
+        self.assertEqual(r.n, solve_p * solve_q)
+
+    def test_fermat_timeout(self):
+        r = self._import_public_key("1024.pem")
+        f = Factorize(r.n, wait=2)
+        solve_p = f.fermat()
+
+        self.assertEqual(solve_p, None)
+
+    def _import_public_key(self, pem):
+        import os.path
+        root = os.path.dirname(os.path.abspath(__file__))
+
+        from Crypto.PublicKey import RSA
+        r = RSA.importKey(open(os.path.join(root, "pems", pem)).read())
+        return r
+
+

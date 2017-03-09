@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 from fractions import gcd
 from Crypto.Random.random import randint
-# from Crypto.Util.number import GCD
-
-from timeout_decorator import timeout, TimeoutError
+from Crypto.Util.number import isPrime
+from timeout_decorator import timeout
 
 
 class Factorize():
@@ -61,6 +60,19 @@ class Factorize():
         except:
             return None
 
+    def small_prime(self):
+        """
+        片方の因数が非常に小さい素数である場合に有効
+        """
+        @timeout(self.wait)
+        def inner(n):
+            p = self._small_prime(self.n)
+            return p
+        try:
+            return inner(self.n)
+        except:
+            return None
+
     def _isqrt(self, n):
         """
         Solve sqrt(n) in range of integer
@@ -108,3 +120,14 @@ class Factorize():
             a += 1
             b2 = a*a - n
         return a - self._isqrt(b2)
+
+    def _small_prime(self, n):
+        i = 1
+        while True:
+            if isPrime(i):
+                if n % i == 0:
+                    return i
+            else:
+                pass
+            i += 1
+

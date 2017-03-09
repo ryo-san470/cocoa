@@ -12,6 +12,8 @@ This tool works on Python 3 only. (Maybe...)
 
 * [Trial division](https://en.wikipedia.org/wiki/Trial_division)
 * [Pollard rho algorithm](https://en.wikipedia.org/wiki/Pollard's_rho_algorithm)
+* [Fermat factorization](https://en.wikipedia.org/wiki/Fermat's_factorization_method)
+* Small Prime
 
 ## RSA
 

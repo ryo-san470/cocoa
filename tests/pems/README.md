@@ -15,3 +15,9 @@ Generate this key on my machine:
 ```bash
 $ openssl genrsa 1024 > 1024.pem
 ```
+
+## small_prime.pem
+[small_prime.pem](./small_prime.pem) `daaa7a845ec611eb9c56bc0d0a6a7d6dea77e59b
+`
+
+Imported from [Boston Key Party CTF 2016 bobs-hat 4](https://github.com/ctfs/write-ups-2016/tree/master/boston-key-party-2016/crypto/bobs-hat-4)

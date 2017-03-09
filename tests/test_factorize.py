@@ -38,6 +38,16 @@ class TestFactorizeTestCase(unittest.TestCase):
 
         self.assertEqual(solve_p, None)
 
+    def test_small_prime(self):
+        r = self._import_public_key("small_prime.pem")
+        f = Factorize(r.n)
+        solve_p = f.small_prime()
+
+        self.assertNotEqual(solve_p, None)
+        solve_q = r.n // solve_p
+
+        self.assertEqual(r.n, solve_p * solve_q)
+
     def _import_public_key(self, pem):
         import os.path
         root = os.path.dirname(os.path.abspath(__file__))

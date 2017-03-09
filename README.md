@@ -11,7 +11,7 @@ This tool works on Python 3 only. (Maybe...)
 ## Prime factorize methods
 
 * [Trial division](https://en.wikipedia.org/wiki/Trial_division)
-
+* [Pollard rho algorithm](https://en.wikipedia.org/wiki/Pollard's_rho_algorithm)
 
 ## RSA
 

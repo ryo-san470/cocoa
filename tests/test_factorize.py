@@ -15,3 +15,10 @@ class TestFactorizeTestCase(unittest.TestCase):
 
         p = self.p if self.p < self.q else self.q
         self.assertEqual(p, solve_p)
+
+    def test_pollard_rho(self):
+        f = Factorize(self.n)
+        solve_p = f.pollard_rho()
+        solve_q = self.n // solve_p
+
+        self.assertEqual(self.n, solve_p * solve_q)

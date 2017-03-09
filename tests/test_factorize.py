@@ -1,13 +1,17 @@
 import unittest
+from Crypto.Util.number import getPrime
 from cocoa.factorize import Factorize
 
 
 class TestFactorizeTestCase(unittest.TestCase):
-    def test_trial_division(self):
-        p = 577
-        q = 709
+    def setUp(self):
+        self.p = getPrime(24)
+        self.q = getPrime(24)
+        self.n = self.p * self.q
 
-        f = Factorize(p * q)
+    def test_trial_division(self):
+        f = Factorize(self.n)
         solve_p = f.trial_division()
 
+        p = self.p if self.p < self.q else self.q
         self.assertEqual(p, solve_p)

@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    working_directory: /home/ubuntu/cocoa
+
+    docker:
+      - image: python:3
+
+    steps:
+      - checkout
+      - run: apt-get update && apt-get install -y libgmp3-dev
+      - run:
+          name: Install dependencies
+          command: pip install -r requirements.txt
+      - run:
+          name: Run tests
+          command: python setup.py test

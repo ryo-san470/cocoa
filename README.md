@@ -1,6 +1,6 @@
 # Cocoa
-[![Build Status](https://circleci.com/gh/ryo-san470/cocoa.svg?style=shield)](https://circleci.com/gh/ryo-san470/cocoa)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Build Status](https://img.shields.io/circleci/project/github/ryosan-470/cocoa.svg?style=flat-square)](https://circleci.com/gh/ryosan-470/cocoa)
+[![License](https://img.shields.io/github/license/ryosan-470/cocoa.svg?style=flat-square)](./LICENSE)
 
 Cocoa is the CTF toolkit.
 
